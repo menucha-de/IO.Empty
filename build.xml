@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project name="havis.device.io-empty" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+
+	<property file="${basedir}/build.properties" />
+
+	<import>
+		<url url="${ivy.url}/ant/default.xml" />
+	</import>
+
+	<target name="clean-cache">
+		<clean-cache />
+	</target>
+
+	<target name="clean-all">
+		<clean-all />
+	</target>
+
+	<target name="compile">
+		<compile dst="${build.dir.classes}">
+			<src path="${src.main.dir}" />
+		</compile>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar-bin />
+	</target>
+	
+	<target name="deb" depends="jar">
+		<deb name="50_${basename}" dst="${build.dir}/tar">
+			<ivy:retrieve pattern="${build.dir}/tar/[artifact].[ext]" conf="runtime" />
+		</deb>
+	</target>
+
+	<target name="app" depends="deb">
+		<app deb="false" />
+	</target>
+
+	<target name="publish" depends="app">
+		<publish jar="false" app="false" />
+	</target>
+
+</project>

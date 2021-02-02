@@ -1,0 +1,15 @@
+Application-Name: GPIO Hardware
+Bundle-Name: Ha-VIS Custom IO Empty Implementation
+Bundle-SymbolicName: havis.device.io-empty
+Bundle-Version: 2.7.0
+Implementation-Version: 2.7
+Havis-Bundle: /OSGI-INF/havis.device.io-empty.properties
+Bundle-ManifestVersion: 2
+Bundle-Vendor: HARTING IT_SD
+Bundle-Activator: havis.device.io.empty.osgi.Activator
+Import-Package: 
+ havis.device.io,
+ havis.device.io.common,
+ org.osgi.framework;resolution:=optional,
+ org.osgi.util.tracker;resolution:=optional
+
