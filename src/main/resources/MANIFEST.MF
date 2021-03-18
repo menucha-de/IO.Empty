@@ -5,7 +5,7 @@ Bundle-Version: 2.7.0
 Implementation-Version: 2.7
 Havis-Bundle: /OSGI-INF/havis.device.io-empty.properties
 Bundle-ManifestVersion: 2
-Bundle-Vendor: HARTING IT_SD
+Bundle-Vendor: Menucha Team <info@menucha.de>
 Bundle-Activator: havis.device.io.empty.osgi.Activator
 Import-Package: 
  havis.device.io,
